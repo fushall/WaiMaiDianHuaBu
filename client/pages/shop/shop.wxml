@@ -1,0 +1,29 @@
+<!--pages/shops/shop.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">「{{shop.name}}」</view>
+    <view class="page__desc">{{shop.description}}</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list"> 
+      <block wx:for="{{shop.categories}}" wx:key="id" wx:for-index="index" wx:for-item="category">
+      <view  class="kind-list__item">
+
+        <view class="weui-flex kind-list__item-hd kind-list__item-hd_show" >
+          <view class="weui-flex__item">{{category.name}}</view>
+        </view>
+        
+        <view class="kind-list__item-bd kind-list__item-bd_show">
+          <view class="weui-cells weui-cells_show">
+            <view class="weui-cell weui-cell_access" wx:for="{{category.foods}}" wx:for-index="index" wx:for-item="food" wx:key="id">
+              <text class="weui-cell__bd food">{{food.name}}:{{food.price}}/{{food.quantity}}{{food.unit}}</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      </block>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,4 @@
+/* pages/shop/shop.wxss */
+.food {
+  font-size: 25rpx;
+}

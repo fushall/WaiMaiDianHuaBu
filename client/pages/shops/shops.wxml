@@ -1,0 +1,41 @@
+<!--pages/shops/shops.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">「走读生午餐指南」</view>
+    <view class="page__desc">收录了校园内外的一些吃喝菜单</view>
+    <view class="page__desc">
+    如果你住校的话，请遵守学校规定
+    </view>
+    <view class="page__desc">
+    不要用来订外卖，乖乖在学校吃吧(•̀ω•́)
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list"> 
+      <block wx:for="{{shops}}" wx:key="id" wx:for-index="index" wx:for-item="shop">
+      <view  class="kind-list__item">
+
+        <view id="{{index}}" class="weui-flex kind-list__item-hd {{shop.isopen ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+          <view class="weui-flex__item">{{shop.name}}</view>
+        </view>
+        
+        <view class="kind-list__item-bd {{shop.isopen ? 'kind-list__item-bd_show' : ''}}">
+          <view class="weui-cells {{shop.isopen ? 'weui-cells_show' : ''}}">
+            <view class="weui-cell weui-cell_access" wx:for="{{shop.phonenumbers}}" wx:for-index="index" wx:for-item="phoneNumber" wx:key="id">
+              <text id = "{{phoneNumber}}"class="weui-cell__bd" bindtap="dial">{{phoneNumber}}</text>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              
+            </view>
+            <navigator url="../shop/shop" wx:if="{{shop.categories}}" class="weui-cell weui-cell_access">
+              <text class="weui-cell__bd"> 进入店铺 </text>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator> 
+          </view>
+        </view>
+
+      </view>
+      </block>
+    </view>
+  </view>
+
+</view>

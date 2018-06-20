@@ -1,0 +1,31 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">「反馈」</view>
+    <view class="page__desc">你有建议的话，本喵可以听听</view>
+    <view class="page__desc">
+    一位不愿意透露姓名的小猫咪留ฅ  ฅ
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <form class="weui-cells weui-cells_form" bindsubmit="submit">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder-style="" placeholder="请写下你的留言，并带上要送给我的小鱼干儿，然后点击“发送”……哼，不客气"></textarea>
+          <view class="weui-textarea-counter">0/140</view>
+        </view>
+      </view>
+      <view class="weui-cell"></view>
+        
+      <view class="weui-btn-area">
+        <!--button class="weui-btn" type="primary">发送！</button-->
+        <button class="weui-btn" type="default">暂未开发，敬请期待...</button>
+      </view>
+      
+      
+
+
+    </form>
+  </view>
+
+</view>
